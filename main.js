@@ -10,7 +10,6 @@ const list = document.querySelector('ul');
         },
     }); 
     const processedResponse = await promise.json(); 
-    console.log(processedResponse)
     const newLi = document.createElement('li');
     newLi.innerText = processedResponse.joke; 
     list.appendChild(newLi); 
