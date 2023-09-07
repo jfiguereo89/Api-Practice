@@ -2,19 +2,12 @@ const data = "https://api.chucknorris.io/jokes/random";
 const list = document.querySelector('ul');
 
 
-const getNewJoke = () => {
-    const promise = fetch(data); 
-        promise
-            .then( function (res){
-                const processPromise = res.json();
-                return processPromise; 
-            })
-            .then( function (processedResponse) {
-                console.log(processedResponse)
-                const li = document.createElement('li');
-                li.innerText = processedResponse.value; 
-                list.appendChild(li); 
-            })
+ const  getNewJoke = async () => {
+    const promise = await fetch(data); 
+    const processedResponse = await promise.json(); 
+    const newLi = document.createElement('li');
+    newLi.innerText = processedResponse.value; 
+    list.appendChild(newLi); 
 }
 
 const bttn = document.querySelector('button'); 
