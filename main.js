@@ -1,4 +1,3 @@
-//const data = "https://api.chucknorris.io/jokes/random"; 
 const data = "https://icanhazdadjoke.com"; 
 const list = document.querySelector('ul');
 
