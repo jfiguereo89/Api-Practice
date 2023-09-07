@@ -1,13 +1,20 @@
-const data = "https://api.chucknorris.io/jokes/random"; 
+//const data = "https://api.chucknorris.io/jokes/random"; 
+const data = "https://icanhazdadjoke.com"; 
 const list = document.querySelector('ul');
 
 
  const  getNewJoke = async () => {
-    const promise = await fetch(data); 
+    const promise = await fetch(data, {
+        headers: {
+            Accept: "application/json"
+        },
+    }); 
     const processedResponse = await promise.json(); 
+    console.log(processedResponse)
     const newLi = document.createElement('li');
-    newLi.innerText = processedResponse.value; 
+    newLi.innerText = processedResponse.joke; 
     list.appendChild(newLi); 
+
 }
 
 const bttn = document.querySelector('button'); 
